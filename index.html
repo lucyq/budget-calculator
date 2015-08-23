@@ -1,0 +1,120 @@
+<!doctype>
+<html>
+	<head>
+
+	<style> 
+		body {
+			margin: 5%;
+			padding: 2%;
+
+		}
+		h1 {
+			text-align: center;
+		}
+
+
+		table {
+			left: 25%;
+			position: absolute;
+			margin: 5%;
+		}
+
+		tr {
+			padding: 5%;
+		}
+
+		td {
+			padding: 5%;
+		}
+	</style>
+
+
+    <script src="jquery.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<title>Budget Calculator</title>
+
+
+
+
+
+
+<script>
+
+	var headers = ["annual_income", "monthly_income", "annual_expenses"];
+	var annual_income = ["Annual Income (after taxes)", "Annual Gifts", "Annual Tax Return"];
+
+	var annual_savings = ["Monthly 401k Contribution", "Monthly Investments", "Other"]
+
+	var monthly_expenses = ["Groceries", "Dining Out", "Mortgage/Rent", "Utilities (electric, wifi, etc.)", "Cell Phone", "Transportation", "Health (insurance, medication, etc", "Student Loans", "Miscellaneous"];
+
+	var annual_expenses = ["Tuition", "Homeowner's/Renter's Insurance", "Car (registration,inspection, insurance, etc.)", " Vacation", "Miscellaneous"];
+
+	var num_rows = 3;
+
+
+	var t_header = "<table id='table'>"
+	var t_body = "";
+	var t_footer = "</table>"
+
+
+
+
+	function load_table() {
+
+		t_body += create_row(annual_income);
+		t_body += create_row(monthly_expenses);
+		t_body += create_row(annual_expenses);
+
+		document.getElementById("content").innerHTML = t_header + t_body + t_footer;
+	}
+
+	function create_row (section) {
+		//row_body = "<tr>";
+		row_body = "";
+		for (var i = 0; i < section.length; i++) {
+			row_body += "<tr>";
+			row_body += "<td>" + section[i] + "</td>";
+			row_body += "<td><input type='text'/></td>";
+			row_body += "</tr>"
+
+		}
+		// row_body += "</tr><br>"
+
+		return row_body;
+
+	}
+
+</script>
+
+
+
+	</head>
+
+
+
+
+
+
+	<body onload="load_table()">
+		<h1>Budget Calculator</h1>
+		<div id="content">
+		<table>
+
+		</table>
+		</div>
+
+
+
+	</body>
+
+</html>
