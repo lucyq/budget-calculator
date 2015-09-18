@@ -75,7 +75,10 @@
 		t_body += create_row(monthly_expenses);
 		t_body += create_row(annual_expenses);
 
-		document.getElementById("content").innerHTML = t_header + t_body + t_footer;
+
+	
+
+		document.getElementById("content").innerHTML = t_header + t_body + t_footer + "<button class='btn-default'>Calculate</button>";
 	}
 
 	function create_row (section) {
@@ -113,6 +116,8 @@
 		</table>
 		</div>
 
+	
+	
 
 
 	</body>
